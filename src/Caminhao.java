@@ -39,7 +39,8 @@ public class Caminhao extends Veiculo {
 	 * 
 	 * @return A descricao do caminhao (a descricao do veiculo mais seus campos separados por tabulacoes)
      */
-    public String getDescricaoCaminhao() {
-        return getDescricaoVeiculo() + "\t" + capacidadeCarga;
+    @Override
+    public String getDescricao() {
+        return super.getDescricao() + "\t" + capacidadeCarga;
     }
 }

@@ -77,7 +77,7 @@ public class Programa {
     private void adicionarVeiculo() {        
         String modelo, marca, placa;
         int tipo;
-        boolean adicionado = false;
+        boolean adicionado = true;
         
         System.out.print("Digite o modelo: ");
         modelo = entrada.nextLine();
@@ -91,31 +91,62 @@ public class Programa {
         
         switch(tipo) {
             case 1: // carro
-                System.out.print("Digite se eh flex (1-sim, 2-nao): ");
-                int flex = Integer.parseInt(entrada.nextLine());
-                boolean ehFlex = (flex == 1);				
-                simulador.adicionarCarro(modelo, marca, placa, ehFlex);
-                adicionado = true;
+                adicionarCarro(modelo, marca, placa);
                 break;
             case 2: // caminhao
-                System.out.print("Digite a capacidade de carga (ton): ");
-                double capacidadeCarga = Double.parseDouble(entrada.nextLine());
-                simulador.adicionarCaminhao(modelo, marca, placa, capacidadeCarga);
-                adicionado = true;
+                adicionarCaminhao(modelo, marca, placa);
                 break;
             case 3: // onibus
-                System.out.print("Digite a capacidade de passageiros: ");
-                int capacidadePas = Integer.parseInt(entrada.nextLine());
-                simulador.adicionarOnibus(modelo, marca, placa, capacidadePas);
-                adicionado = true;
+                adicionarOnibus(modelo, marca, placa);
                 break;
             default:
+                adicionado = false;
                 System.out.println("Tipo de veiculo invalido!");
         }
         
         if (adicionado) {
             System.out.print("Veiculo adicionado!");
         }
+    }
+
+    /**
+     * Adiciona um carro no simulador
+     * 
+     * @param modelo Modelo do carro
+     * @param marca Marca do carro
+     * @param placa Placa do carro
+     */
+    private void adicionarCarro(String modelo, String marca, String placa) {
+        System.out.print("Digite se eh flex (1-sim, 2-nao): ");
+        int flex = Integer.parseInt(entrada.nextLine());
+        boolean ehFlex = (flex == 1);				
+        simulador.adicionarCarro(modelo, marca, placa, ehFlex);
+    }
+
+    /**
+     * Adiciona um caminhão no simulador
+     * 
+     * @param modelo Modelo do caminhão
+     * @param marca Marca do caminhão
+     * @param placa Placa do caminhão
+     */
+    private void adicionarCaminhao(String modelo, String marca, String placa) {
+        System.out.print("Digite a capacidade de carga (ton): ");
+        double capacidadeCarga = Double.parseDouble(entrada.nextLine());
+        simulador.adicionarCaminhao(modelo, marca, placa, capacidadeCarga);
+    }
+
+    /**
+     * Adiciona um ônibus no simulador
+     * 
+     * @param modelo Modelo do ônibus
+     * @param marca Marca do ônibus
+     * @param placa Placa do ônibus
+     */
+    private void adicionarOnibus(String modelo, String marca, String placa) {
+        System.out.print("Digite a capacidade de passageiros: ");
+        int capacidadePas = Integer.parseInt(entrada.nextLine());
+        simulador.adicionarOnibus(modelo, marca, placa, capacidadePas);
     }
     
     /**

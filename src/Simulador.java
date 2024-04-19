@@ -77,13 +77,13 @@ public class Simulador {
         String descricao = "FROTA DO SIMULADOR";
         
         for (Carro c: carros) {
-            descricao += "\n" + c.getDescricaoCarro();
+            descricao += "\n" + c.getDescricao();
         }
         for (Caminhao c: caminhoes) {
-            descricao += "\n" + c.getDescricaoCaminhao();
+            descricao += "\n" + c.getDescricao();
         }
         for (Onibus o: colOnibus) {
-            descricao += "\n" + o.getDescricaoOnibus();
+            descricao += "\n" + o.getDescricao();
         }
         return descricao;
     }

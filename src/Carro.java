@@ -33,14 +33,15 @@ public class Carro extends Veiculo {
         return ehFlex;
     }
     
-        /**
+    /**
      * Retorna a descricao do carro no formato:
      *  Placa   Modelo  Marca   Velocidade km/h     Flex (ou Comum)
 	 * 
 	 * @return A descricao do carro (a descricao do veiculo mais seus campos separados por tabulacoes)
      */
-    public String getDescricaoCarro() {
-        String descricao = getDescricaoVeiculo();
+    @Override
+    public String getDescricao() {
+        String descricao = super.getDescricao();
         if (ehFlex) {
             descricao = descricao + "\tFlex";
         }

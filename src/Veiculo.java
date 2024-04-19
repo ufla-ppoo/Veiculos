@@ -87,7 +87,7 @@ public class Veiculo {
 	 * 
 	 * @return A descricao do veiculo (seus campos separados por tabulacoes)
      */
-    public String getDescricaoVeiculo() {
+    public String getDescricao() {
         return placa + "\t" + modelo + "\t" + marca + "\t" + velocidadeAtual + " Km/h";
     }
 }
